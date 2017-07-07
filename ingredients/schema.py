@@ -32,7 +32,7 @@ class Query(graphene.AbstractType):
         # We can easily optimize query count in the resolve method
         return Ingredient.objects.select_related('category').all()
 
-     def resolve_category(self, args, context, info):
+    def resolve_category(self, args, context, info):
         id = args.get('id')
         name = args.get('name')
 
